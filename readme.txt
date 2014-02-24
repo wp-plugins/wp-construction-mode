@@ -11,7 +11,7 @@ Set entire website or specific page under construction or maintenance for all vi
 == Description ==
 
 Set entire website or specific page under construction or maintenance. Admin can still view the site, perfect for developing new websites or pages. <br>
-To view the demo, <a href="" target="_blank" title="WP Construction Mode Demo">click here</a>
+To view the demo, <a href="http://smartcatdesign.net/wp-construction-mode-demo/" target="_blank" title="WP Construction Mode Demo">click here</a>
 == Installation ==
 
 1. Upload 'wp-construction-maintenance' to the '/wp-content/plugins/' directory
