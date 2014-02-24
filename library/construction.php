@@ -25,22 +25,22 @@
         <div class="wuc_icons">
             <?php if($wuc_facebook != ''){ ?>
             <a href="<?php echo $wuc_facebook; ?>" target="_blank">
-                <img src="<?php echo plugins_url() ?>/wp-construction-maintenance/images/fb.png"/>
+                <img src="<?php echo plugins_url() ?>/wp-construction-mode/images/fb.png"/>
             </a>
             <?php } ?>
             <?php if($wuc_gplus != ''){ ?>
             <a href="<?php echo $wuc_gplus; ?>" target="_blank">
-                <img src="<?php echo plugins_url() ?>/wp-construction-maintenance/images/google.png"/>
+                <img src="<?php echo plugins_url() ?>/wp-construction-mode/images/google.png"/>
             </a>
             <?php }?>
             <?php if($wuc_twitter != ''){ ?>
             <a href="<?php echo $wuc_twitter; ?>" target="_blank">
-                <img src="<?php echo plugins_url() ?>/wp-construction-maintenance/images/twitter.png"/>
+                <img src="<?php echo plugins_url() ?>/wp-construction-mode/images/twitter.png"/>
             </a>
             <?php }?>
             <?php if($wuc_email != ''){ ?>
             <a href="mailto:<?php echo $wuc_email; ?>" target="_blank">
-                <img src="<?php echo plugins_url() ?>/wp-construction-maintenance/images/email.png"/>
+                <img src="<?php echo plugins_url() ?>/wp-construction-mode/images/email.png"/>
             </a>
             <?php }?>
         </div>

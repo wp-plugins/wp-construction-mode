@@ -174,7 +174,7 @@ function show_uc() {
         }
     }
 }
-wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-maintenance/style/style.css', false, '1.1' );
+wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-mode/style/style.css', false, '1.1' );
 wp_enqueue_style( 'wuc_style' );
 add_action('wp_head', 'show_uc');
 ?>
