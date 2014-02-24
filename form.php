@@ -4,6 +4,7 @@
     .center{text-align: center;}
     .width70{ width: 70%;}
     .width25{ width: 25%;}
+	.width50{ width: 50%;}
     #gopro{
         width: 100%;
         display: block;

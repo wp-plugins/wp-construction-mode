@@ -160,6 +160,7 @@ function show_uc() {
     $wuc_facebook = get_option('wuc_facebook');
     $current_user = wp_get_current_user();
 
+	
     if ($set_opt == 'Yes' && !user_can($current_user, 'administrator')) {        
         if($set_page == get_the_ID()){
             //echo "<div style='margin:0 auto; text-align:center;font-size:30px;padding-top:30px;'>" . $set_msg . "</div>";
@@ -174,7 +175,7 @@ function show_uc() {
         }
     }
 }
-wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-maintenance/style/style.css', false, '1.1' );
+wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-mode/style/style.css', false, '1.1' );
 wp_enqueue_style( 'wuc_style' );
 add_action('wp_head', 'show_uc');
 ?>
