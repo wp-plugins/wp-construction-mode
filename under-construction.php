@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/under-construction-maintenance-mode-free-wordpress-plugin/
   Description: Display a customizable Under Construction or Coming Soon page for all users who are not logged in. Perfect for developing on a live server!
-  Version: 1.0
+  Version: 1.1
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
@@ -45,8 +45,18 @@ function under_construction_action() {
             default:
         }
     }
+    $option_name1 = 'set_opt';
+    $option_name2 = 'set_msg';
+    $option_name3 = 'set_page';
     $set_opt = get_option($option_name1);
     $set_msg = get_option($option_name2);
+    $set_page = get_option($option_name3);
+    $set_caption = get_option('set_caption');
+    $wuc_logo = get_option('wuc_logo');
+    $wuc_email = get_option('wuc_email');
+    $wuc_twitter = get_option('wuc_twitter');
+    $wuc_gplus = get_option('wuc_gplus');
+    $wuc_facebook = get_option('wuc_facebook');
     require_once('form.php');
 }
 
@@ -54,6 +64,7 @@ function set_under_construction() {
     $option_name1 = 'set_opt';
     $option_name2 = 'set_msg';
     $option_name3 = 'set_page';
+    
     $new_value1 = ($_REQUEST['set_opt'] == "") ? 'No' : $_REQUEST['set_opt'];
     if (get_option($option_name1) !== false) {
         update_option($option_name1, $new_value1);
@@ -81,27 +92,89 @@ function set_under_construction() {
         $autoload = 'no';
         add_option($option_name3, $new_value3, $deprecated, $autoload);
     }
+    
+    $new_value4 = ($_REQUEST['set_caption'] == "") ? 'We will be back soon!' : $_REQUEST['set_caption'];
+    if (get_option('set_caption') !== false) {
+        update_option('set_caption', $new_value4);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('set_caption', $new_value4, $deprecated, $autoload);
+    }
+
+    $new_value5 = ($_REQUEST['wuc_logo'] == "") ? '' : $_REQUEST['wuc_logo'];
+    if (get_option('wuc_logo') !== false) {
+        update_option('wuc_logo', $new_value5);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_logo', $new_value5, $deprecated, $autoload);
+    }
+    $new_value6 = ($_REQUEST['wuc_facebook'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_facebook'];
+    if (get_option('wuc_facebook') !== false) {
+        update_option('wuc_facebook', $new_value6);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_facebook', $new_value6, $deprecated, $autoload);
+    }
+    $new_value7 = ($_REQUEST['wuc_gplus'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_gplus'];
+    if (get_option('wuc_gplus') !== false) {
+        update_option('wuc_gplus', $new_value7);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_gplus', $new_value7, $deprecated, $autoload);
+    }
+    $new_value8 = ($_REQUEST['wuc_twitter'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_twitter'];
+    if (get_option('wuc_twitter') !== false) {
+        update_option('wuc_twitter', $new_value8);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_twitter', $new_value8, $deprecated, $autoload);
+    }
+    $new_value9 = ($_REQUEST['wuc_email'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_email'];
+    if (get_option('wuc_email') !== false) {
+        update_option('wuc_email', $new_value9);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_email', $new_value9, $deprecated, $autoload);
+    }
 }
 
 function show_uc() {
+
     $option_name1 = 'set_opt';
     $option_name2 = 'set_msg';
     $option_name3 = 'set_page';
     $set_opt = get_option($option_name1);
     $set_msg = get_option($option_name2);
     $set_page = get_option($option_name3);
+    $set_caption = get_option('set_caption');
+    $wuc_logo = get_option('wuc_logo');
+    $wuc_email = get_option('wuc_email');
+    $wuc_twitter = get_option('wuc_twitter');
+    $wuc_gplus = get_option('wuc_gplus');
+    $wuc_facebook = get_option('wuc_facebook');
     $current_user = wp_get_current_user();
 
-    if ($set_opt == 'Yes' && !user_can($current_user, 'administrator')) {
+    if ($set_opt == 'Yes' && !user_can($current_user, 'administrator')) {        
         if($set_page == get_the_ID()){
-            echo "<div style='margin:0 auto; text-align:center;font-size:30px;padding-top:30px;'>" . $set_msg . "</div>";
+            //echo "<div style='margin:0 auto; text-align:center;font-size:30px;padding-top:30px;'>" . $set_msg . "</div>";
+            include_once 'style/style_css.php';
+            include_once 'library/construction.php';
             exit(0);
         }else if($set_page == "all"){
-            echo "<div style='margin:0 auto; text-align:center;font-size:30px;padding-top:30px;'>" . $set_msg . "</div>";
+            //echo "<div style='margin:0 auto; text-align:center;font-size:30px;padding-top:30px;'>" . $set_msg . "</div>";
+            include_once 'style/style_css.php';
+            include_once 'library/construction.php';
             exit(0);
         }
     }
 }
-
+wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-maintenance/style/style.css', false, '1.1' );
+wp_enqueue_style( 'wuc_style' );
 add_action('wp_head', 'show_uc');
 ?>
