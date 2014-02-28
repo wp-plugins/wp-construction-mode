@@ -12,7 +12,8 @@
         padding: 10px;
         margin: 10px 8px 15px 5px;
         border: 1px solid #e1e1e1;
-        background: #f9f9f9;
+        background: #464646;
+        color: #ffffff;
         overflow: hidden;
     }
     #wrapper{
@@ -65,7 +66,7 @@
             <div><em>Why go pro?</em> More Icons, More Colors, Animations and more!  </div>
         </div>
         <div class="right">
-            <!--<a href="#" class="button-primary" style="padding: 40px;line-height: 0;font-size: 20px">GO PRO NOW</a>-->
+            <a href="http://smartcatdesign.net/wp-construction-mode-pro-wordpress-plugin/" target="_blank" class="button-primary" style="padding: 40px;line-height: 0;font-size: 20px">GO PRO NOW</a>
         </div>
     </div>
 
@@ -92,7 +93,7 @@
         <table class="widefat">
             <thead>
                 <tr>
-                    <th><?php _e("Pro Version") ?> <span class='proversion'><?php _e('coming soon')?></span></th>
+                    <th><?php _e("Pro Version") ?> <span class='proversion'></span></th>
                 </tr>
                 <tr>
                     <td>

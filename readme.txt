@@ -11,10 +11,15 @@ Set entire website or specific page under construction or maintenance for all vi
 == Description ==
 
 Set entire website or specific page under construction or maintenance. Admin can still view the site, perfect for developing new websites or pages. <br>
-To view the demo, <a href="http://smartcatdesign.net/wp-construction-mode-demo/" target="_blank" title="WP Construction Mode Demo">click here</a>
+To view the demo, <a href="http://smartcatdesign.net/wp-construction-mode-demo/" target="_blank" title="WP Construction Mode Demo">click here</a><br>
+Pro version now available, <a href="http://smartcatdesign.net/wp-construction-mode-pro-wordpress-plugin/" target="_blank" title="WP Construction Mode Demo">Go Pro</a><br><br>
+
+<b>V1.4:</b> bug fixes, pro version added<br>
+
+
 == Installation ==
 
-1. Upload 'wp-construction-maintenance' to the '/wp-content/plugins/' directory
+1. Upload 'wp-construction-mode' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Click on Under Construction in the WordPress Dashboard sidebar
 4. You can choose your option and enter your custom message, caption, logo and urls for your social pages
