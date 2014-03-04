@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/under-construction-maintenance-mode-free-wordpress-plugin/
   Description: Display a customizable Under Construction or Coming Soon page for all users who are not logged in. Perfect for developing on a live server!
-  Version: 1.4
+  Version: 1.5
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
@@ -110,37 +110,37 @@ function set_under_construction() {
         $autoload = 'no';
         add_option('wuc_logo', $new_value5, $deprecated, $autoload);
     }
-    $new_value6 = ($_REQUEST['wuc_facebook'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_facebook'];
+    $new_value6 = ($_REQUEST['wuc_facebook'] == "") ? '' : $_REQUEST['wuc_facebook'];
     if (get_option('wuc_facebook') !== false) {
         update_option('wuc_facebook', $new_value6);
     } else {
         $deprecated = null;
         $autoload = 'no';
-        add_option('wuc_facebook', $new_value6, $deprecated, $autoload);
+        add_option('wuc_facebook', 'http://smartcatdesign.net', $deprecated, $autoload);
     }
-    $new_value7 = ($_REQUEST['wuc_gplus'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_gplus'];
+    $new_value7 = ($_REQUEST['wuc_gplus'] == "") ? '' : $_REQUEST['wuc_gplus'];
     if (get_option('wuc_gplus') !== false) {
         update_option('wuc_gplus', $new_value7);
     } else {
         $deprecated = null;
         $autoload = 'no';
-        add_option('wuc_gplus', $new_value7, $deprecated, $autoload);
+        add_option('wuc_gplus', 'http://smartcatdesign.net', $deprecated, $autoload);
     }
-    $new_value8 = ($_REQUEST['wuc_twitter'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_twitter'];
+    $new_value8 = ($_REQUEST['wuc_twitter'] == "") ? '' : $_REQUEST['wuc_twitter'];
     if (get_option('wuc_twitter') !== false) {
         update_option('wuc_twitter', $new_value8);
     } else {
         $deprecated = null;
         $autoload = 'no';
-        add_option('wuc_twitter', $new_value8, $deprecated, $autoload);
+        add_option('wuc_twitter', 'http://smartcatdesign.net', $deprecated, $autoload);
     }
-    $new_value9 = ($_REQUEST['wuc_email'] == "") ? 'http://smartcatdesign.net' : $_REQUEST['wuc_email'];
+    $new_value9 = ($_REQUEST['wuc_email'] == "") ? '' : $_REQUEST['wuc_email'];
     if (get_option('wuc_email') !== false) {
         update_option('wuc_email', $new_value9);
     } else {
         $deprecated = null;
         $autoload = 'no';
-        add_option('wuc_email', $new_value9, $deprecated, $autoload);
+        add_option('wuc_email', 'http://smartcatdesign.net', $deprecated, $autoload);
     }
 }
 
