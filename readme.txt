@@ -4,7 +4,7 @@ Donate link: http://smartcatdesign.net
 Tags: construction,maintenance,page,admin,under construction,under maintenance,coming soon,administrator,custom message,social,facebook,twitter,google plus,gplus,email,icons,link,instagram,digg,flickr,skype,tumblr,youtube
 Requires at least: 3.2
 Tested up to: 3.81
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 
 Set entire website or specific page under construction or maintenance for all viewers except Admin
@@ -13,8 +13,6 @@ Set entire website or specific page under construction or maintenance for all vi
 Set entire website or specific page under construction or maintenance. Admin can still view the site, perfect for developing new websites or pages. <br>
 To view the demo, <a href="http://smartcatdesign.net/wp-construction-mode-demo/" target="_blank" title="WP Construction Mode Demo">click here</a><br>
 Pro version now available, <a href="http://smartcatdesign.net/wp-construction-mode-pro-wordpress-plugin/" target="_blank" title="WP Construction Mode Demo">Go Pro</a><br><br>
-
-<b>V1.4:</b> bug fixes, pro version added<br>
 
 
 == Installation ==
@@ -34,3 +32,13 @@ Pro version now available, <a href="http://smartcatdesign.net/wp-construction-mo
 
 1. Under Construction Page Screenshot
 2. Settings Page
+
+== Changelog ==
+= 1.0 =
+initial release
+= 1.3 =
+added social icons
+= 1.4 =
+bug fixes, pro version released
+= 1.5 =
+fix bug with blank urls
