@@ -11,8 +11,14 @@ Set entire website or specific page under construction or maintenance for all vi
 == Description ==
 
 Set entire website or specific page under construction or maintenance. Admin can still view the site, perfect for developing new websites or pages. <br>
-To view the demo, <a href="http://smartcatdesign.net/wp-construction-mode-demo/" target="_blank" title="WP Construction Mode Demo">click here</a><br>
-Pro version now available, <a href="http://smartcatdesign.net/wp-construction-mode-pro-wordpress-plugin/" target="_blank" title="WP Construction Mode Demo">Go Pro</a><br><br>
+- Preview Demo, <a href="http://smartcatdesign.net/wp-construction-mode-demo/" target="_blank" title="WP Construction Mode Demo">click here</a><br>
+- Pro version now available, <a href="http://smartcatdesign.net/wp-construction-mode-pro-wordpress-plugin/" target="_blank" title="WP Construction Mode Demo">Go Pro</a><br>
+<br>
+<em>Coming Soon:</em><br>
+- Change Background: this feature will allow you to choose a background color, or set an image as a background<br>
+- Progress Bar & Timer: This will add a progress bar to notify people how long till your site is ready<br>
+- Support Forum: Do you have any question? Requests? Need Help? <a href="http://smartcatdesign.net/support/">Visit the support forum here</a> <br>
+
 
 
 == Installation ==
@@ -42,3 +48,5 @@ added social icons
 bug fixes, pro version released
 = 1.5 =
 fix bug with blank urls
+= 1.6 = 
+Minor css fixes
