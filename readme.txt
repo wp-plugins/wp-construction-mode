@@ -1,10 +1,10 @@
 === WP Construction Mode ===
 Contributors: smartcat
 Donate link: http://smartcatdesign.net
-Tags: construction,maintenance,page,admin,under construction,under maintenance,coming soon,administrator,custom message,social,facebook,twitter,google plus,gplus,email,icons,link,instagram,digg,flickr,skype,tumblr,youtube
+Tags: construction,maintenance,page,admin,under construction,under maintenance,coming soon,administrator,custom message,social,facebook,twitter,google plus,gplus,email,icons,link,instagram,digg,flickr,skype,tumblr,youtube,progress,bar,timer,countdown,clock,responsive
 Requires at least: 3.2
 Tested up to: 3.81
-Stable tag: 1.6
+Stable tag: 1.7
 License: GPLv2 or later
 
 Set entire website or specific page under construction or maintenance for all viewers except Admin
@@ -50,5 +50,5 @@ bug fixes, pro version released
 fix bug with blank urls
 = 1.6 = 
 Minor css fixes
-= 1.7 = 
-Background
+= 1.7 =
+Update: allow user to change background image, progress bar, countdown timer, new animations, responsive
