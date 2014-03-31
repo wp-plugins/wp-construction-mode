@@ -1,10 +1,28 @@
+<script>
+    jQuery(function() {
+        jQuery('#wuc_loading').change(function() {
+            if (jQuery(this).val() == 'progress') {
+                jQuery('.choose-progress').show();
+                jQuery('.choose-time').hide();
+
+            } else {
+                jQuery('.choose-progress').hide();
+            }
+        });
+        <?php if ($wuc_loading == 'timer') { ?>
+            jQuery('.choose-time').show();
+        <?php } elseif ($wuc_loading == 'progress') { ?>
+            jQuery('.choose-progress').show();
+        <?php } ?>
+    });
+</script>
 <style>
     .left{ float: left;}
     .right {float: right;}
     .center{text-align: center;}
     .width70{ width: 70%;}
     .width25{ width: 25%;}
-	.width50{ width: 50%;}
+    .width50{ width: 50%;}
     #gopro{
         width: 100%;
         display: block;
@@ -57,13 +75,16 @@
         color: red;
         font-style: italic;
     }
+    .choose-progress{
+        display: none;
+    }
 </style>
 
 <div id="wrapper">
     <div id="gopro">
         <div class="left">
             <h1><b>WP Construction / Maintenance Mode</b></h1>
-            <div><em>Why go pro?</em> More Icons, More Colors, Animations and more!  </div>
+            <div><em>Why go pro?</em> Animated Progress Bar, Countdown Timer, More Icons, More Colors and Animations</div>
         </div>
         <div class="right">
             <a href="http://smartcatdesign.net/wp-construction-mode-pro-wordpress-plugin/" target="_blank" class="button-primary" style="padding: 40px;line-height: 0;font-size: 20px">GO PRO NOW</a>
@@ -110,7 +131,7 @@
             <table class="widefat">
                 <thead>
                     <tr>
-                        <th colspan="2">Appearance</th>
+                        <th colspan="2">General Settings</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -143,10 +164,51 @@
 
                             </select>    
                         </td>
+                    </tr>
+                    <tr>
+                        <td><?php _e('Loading Style') ?></td>
+                        <td>
+                            <select name="wuc_loading" id="wuc_loading">
+                                <option value="timer" disabled>Countdown Timer - Pro Version</option>
+                                <option value="progress" <?php echo ($wuc_loading == 'progress') ? 'selected=selected' : ''; ?>>Progress Bar</option>
+                                <option value="none" <?php echo ($wuc_loading == 'none') ? 'selected=selected' : ''; ?>>None</option>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr class="choose-progress">
+                        <td><?php _e('Percentage Complete') ?></td>
+                        <td>
+                            <select name="wuc_progress">
+                                <option value="10" <?php echo ($wuc_progress == '10') ? 'selected=selected' : '' ?>>10%</option>
+                                <option value="20" <?php echo ($wuc_progress == '20') ? 'selected=selected' : '' ?>>20%</option>
+                                <option value="30" <?php echo ($wuc_progress == '30') ? 'selected=selected' : '' ?>>30%</option>
+                                <option value="40" <?php echo ($wuc_progress == '40') ? 'selected=selected' : '' ?>>40%</option>
+                                <option value="50" <?php echo ($wuc_progress == '50') ? 'selected=selected' : '' ?>>50%</option>
+                                <option value="60" <?php echo ($wuc_progress == '60') ? 'selected=selected' : '' ?>>60%</option>
+                                <option value="70" <?php echo ($wuc_progress == '70') ? 'selected=selected' : '' ?>>70%</option>
+                                <option value="80" <?php echo ($wuc_progress == '80') ? 'selected=selected' : '' ?>>80%</option>
+                                <option value="90" <?php echo ($wuc_progress == '90') ? 'selected=selected' : '' ?>>90%</option>
+                            </select>
+                        </td                    
+            </table>
+            <table class="widefat">
+                <thead>
+                    <tr>
+                        <th colspan="2">Appearance</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td><?php _e('Logo') ?></td>
                         <td>
                             <input type="text" name="wuc_logo" value="<?php echo $wuc_logo ?>" placeholder="<?php _e('Enter image path/url or leave blank for no logo'); ?>"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><?php _e('Background Image') ?></td>
+                        <td>
+                            <input type="text" name="wuc_background" value="<?php echo $wuc_background ?>" placeholder="<?php _e('Enter image path/url or leave blank for default background'); ?>"/>
                         </td>
                     </tr>
                     <tr>
@@ -162,7 +224,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><?php _e('Loading Animation')?></td>
+                        <td><?php _e('Loading Animation') ?></td>
                         <td>
                             <select name='wuc_load_animate'>
                                 <option value='no'>None</option>
@@ -182,31 +244,31 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?php _e('Facebook URL')?></td>
+                        <td><?php _e('Facebook URL') ?></td>
                         <td>
                             <input type="text" name="wuc_facebook" value="<?php echo $wuc_facebook ?>" placeholder="<?php _e('Enter Facebook URL or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
-                        <td><?php _e('Google Plus URL')?></td>
+                        <td><?php _e('Google Plus URL') ?></td>
                         <td>
                             <input type="text" name="wuc_gplus" value="<?php echo $wuc_gplus ?>" placeholder="<?php _e('Enter Google Plus URL or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
-                        <td><?php _e('Twitter URL')?></td>
+                        <td><?php _e('Twitter URL') ?></td>
                         <td>
                             <input type="text" name="wuc_twitter" value="<?php echo $wuc_twitter ?>" placeholder="<?php _e('Enter Twitter URL or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
-                        <td><?php _e('Email Address')?></td>
+                        <td><?php _e('Email Address') ?></td>
                         <td>
                             <input type="text" name="wuc_email" value="<?php echo $wuc_email ?>" placeholder="<?php _e('Enter email address or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
-                        <td><?php _e('Hover Animation')?></td>
+                        <td><?php _e('Hover Animation') ?></td>
                         <td>
                             <select name='wuc_social_animate'>
                                 <option value='no'>No</option>
@@ -216,37 +278,37 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><?php _e('Instagram')?></td>
+                        <td><?php _e('Instagram') ?></td>
                         <td>
                             <input type="text" name="#" placeholder="<?php _e('Enter Instagram URL or leave blank for no icon'); ?>" disabled/><span class='proversion'>Pro Version</span>
                         </td>
                     </tr>                    
                     <tr>
-                        <td><?php _e('Digg')?></td>
+                        <td><?php _e('Digg') ?></td>
                         <td>
                             <input type="text" placeholder="<?php _e('Enter Digg URL or leave blank for no icon'); ?>" disabled/><span class='proversion'>Pro Version</span>
                         </td>
                     </tr>                    
                     <tr>
-                        <td><?php _e('Flickr')?></td>
+                        <td><?php _e('Flickr') ?></td>
                         <td>
                             <input type="text" placeholder="<?php _e('Enter Flickr URL or leave blank for no icon'); ?>" disabled/><span class='proversion'>Pro Version</span>
                         </td>
                     </tr>                    
                     <tr>
-                        <td><?php _e('Skype')?></td>
+                        <td><?php _e('Skype') ?></td>
                         <td>
                             <input type="text" placeholder="<?php _e('Enter Skype URL or leave blank for no icon'); ?>" disabled/><span class='proversion'>Pro Version</span>
                         </td>
                     </tr>                    
                     <tr>
-                        <td><?php _e('Tumblr')?></td>
+                        <td><?php _e('Tumblr') ?></td>
                         <td>
                             <input type="text" placeholder="<?php _e('Enter Tumblr URL or leave blank for no icon'); ?>" disabled/><span class='proversion'>Pro Version</span>
                         </td>
                     </tr>                    
                     <tr>
-                        <td><?php _e('Youtube')?></td>
+                        <td><?php _e('Youtube') ?></td>
                         <td>
                             <input type="text" placeholder="<?php _e('Enter Youtube URL or leave blank for no icon'); ?>" disabled/><span class='proversion'>Pro Version</span>
                         </td>

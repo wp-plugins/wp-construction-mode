@@ -9,5 +9,8 @@
  */
 ?>
 <style>
+    .wuc-overlay{
+        background-image: url('<?php echo $wuc_background;?>');
+    }
     
 </style>

@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/under-construction-maintenance-mode-free-wordpress-plugin/
   Description: Display a customizable Under Construction or Coming Soon page for all users who are not logged in. Perfect for developing on a live server!
-  Version: 1.6
+  Version: 1.7
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
@@ -57,6 +57,9 @@ function under_construction_action() {
     $wuc_twitter = get_option('wuc_twitter');
     $wuc_gplus = get_option('wuc_gplus');
     $wuc_facebook = get_option('wuc_facebook');
+    $wuc_background = get_option('wuc_background');
+    $wuc_loading = get_option('wuc_loading');
+    $wuc_progress = get_option('wuc_progress');     
     require_once('form.php');
 }
 
@@ -142,6 +145,30 @@ function set_under_construction() {
         $autoload = 'no';
         add_option('wuc_email', 'http://smartcatdesign.net', $deprecated, $autoload);
     }
+    $new_value10 = ($_REQUEST['wuc_background'] == "") ? '' : $_REQUEST['wuc_background'];
+    if (get_option('wuc_background') !== false) {
+        update_option('wuc_background', $new_value10);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_background', '', $deprecated, $autoload);
+    }
+    $new_value19 = ($_REQUEST['wuc_loading'] == "") ? '' : $_REQUEST['wuc_loading'];
+    if (get_option('wuc_loading') !== false) {
+        update_option('wuc_loading', $new_value19);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_loading', 'timer', $deprecated, $autoload);
+    }
+    $new_value20 = ($_REQUEST['wuc_progress'] == "") ? '' : $_REQUEST['wuc_progress'];
+    if (get_option('wuc_progress') !== false) {
+        update_option('wuc_progress', $new_value20);
+    } else {
+        $deprecated = null;
+        $autoload = 'no';
+        add_option('wuc_progress', '10', $deprecated, $autoload);
+    }
 }
 
 function show_uc() {
@@ -158,6 +185,9 @@ function show_uc() {
     $wuc_twitter = get_option('wuc_twitter');
     $wuc_gplus = get_option('wuc_gplus');
     $wuc_facebook = get_option('wuc_facebook');
+    $wuc_background = get_option('wuc_background');
+    $wuc_loading = get_option('wuc_loading');
+    $wuc_progress = get_option('wuc_progress');     
     $current_user = wp_get_current_user();
 
 	
@@ -175,7 +205,10 @@ function show_uc() {
         }
     }
 }
-wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-mode/style/style.css', false, '1.4' );
+wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-mode/style/style.css', false, '1.7' );
+wp_register_style( 'wuc_font', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600', false);
+
+wp_enqueue_style( 'wuc_font' );
 wp_enqueue_style( 'wuc_style' );
 add_action('wp_head', 'show_uc');
 ?>

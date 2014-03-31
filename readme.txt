@@ -50,3 +50,5 @@ bug fixes, pro version released
 fix bug with blank urls
 = 1.6 = 
 Minor css fixes
+= 1.7 = 
+Background
