@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/under-construction-maintenance-mode-free-wordpress-plugin/
   Description: Display a customizable Under Construction or Coming Soon page for all users who are not logged in. Perfect for developing on a live server!
-  Version: 1.7
+  Version: 1.8
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
@@ -205,7 +205,7 @@ function show_uc() {
         }
     }
 }
-wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-mode/style/style.css', false, '1.7' );
+wp_register_style( 'wuc_style', plugins_url() . '/wp-construction-mode/style/style.css', false, '1.8' );
 wp_register_style( 'wuc_font', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600', false);
 
 wp_enqueue_style( 'wuc_font' );

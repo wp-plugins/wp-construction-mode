@@ -20,10 +20,14 @@
             <h3 class="subtitle">
                 <?php echo $set_caption; ?>
             </h3>
-            <div class="wuc-progress">
-                <div class="wuc-progress-bar" style="width: <?php echo $wuc_progress; ?>%"></div>
-                <div class="wuc-progress-number"><?php echo $wuc_progress; ?>% complete</div>
-            </div>
+            
+            <?php if($wuc_loading != 'none'){ ?>
+                <div class="wuc-progress">
+                    <div class="wuc-progress-bar" style="width: <?php echo $wuc_progress; ?>%"></div>
+                    <div class="wuc-progress-number"><?php echo $wuc_progress; ?>% complete</div>
+                </div>
+            <?php }?>
+            
             <div class="wuc_icons">
                 <?php if ($wuc_facebook != '') { ?>
                     <a href="<?php echo $wuc_facebook; ?>" target="_blank">
