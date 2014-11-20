@@ -125,6 +125,31 @@
                 </tr>
             </thead>
         </table>
+        <table class="widefat">
+            <thead>
+                <tr>
+                    <th><?php _e("Free WordPress Theme!") ?> <span class='proversion'></span></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        A unique and modern lightweight responsive WordPress theme that is ready out of the box to make your website appealing while being easy to use. Avenue comes loaded with over 600 icons with cool animationm a light weight custom slider and 2 color skins as well as 5 widget placeholders.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href='https://wordpress.org/themes/avenue' target='_blank'>
+                            <img src="<?php echo SC_WUC_PATH; ?>/avenue.jpg" style="width: 100%;"/>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='center'>
+                        <a href='https://wordpress.org/themes/avenue' target='_blank' class='button-primary'>Download</a>
+                    </td>
+                </tr>                
+            </thead>
+        </table>
     </div>
     <div class="width70 left">
         <form name="post_form" method="post" action="" enctype="multipart/form-data">
