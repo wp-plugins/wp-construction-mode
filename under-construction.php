@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/under-construction-maintenance-mode-free-wordpress-plugin/
   Description: Display a customizable Under Construction or Coming Soon page for all users who are not logged in. Perfect for developing on a live server!
-  Version: 1.9
+  Version: 1.91
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
@@ -55,7 +55,7 @@ function under_construction_action() {
         switch ($_REQUEST['act']) {
             case "save":
                 set_under_construction();
-                echo '<div class="updated below-h2" id="message" style="position:relative; clear:both;"><p>Under Construction: ' . sanitize_text_field($_REQUEST['set_opt']) . '</p></div>';
+                echo '<div class="updated below-h2" id="message" style="position:relative; clear:both;"><p>Under Construction: ' . ($_REQUEST['set_opt']) . '</p></div>';
                 break;
             default:
         }
@@ -86,7 +86,7 @@ function set_under_construction() {
     $option_name2 = 'set_msg';
     $option_name3 = 'set_page';
     
-    $new_value1 = (sanitize_text_field($_REQUEST['set_opt']) == "") ? 'No' : sanitize_text_field($_REQUEST['set_opt']);
+    $new_value1 = (($_REQUEST['set_opt']) == "") ? 'No' : ($_REQUEST['set_opt']);
     if (get_option($option_name1) !== false) {
         update_option($option_name1, $new_value1);
     } else {
@@ -96,7 +96,7 @@ function set_under_construction() {
     }
 
 
-    $new_value2 = (sanitize_text_field($_REQUEST['set_msg']) == "") ? 'Page is currently under construction. ' : sanitize_text_field($_REQUEST['set_msg']);
+    $new_value2 = (($_REQUEST['set_msg']) == "") ? 'Page is currently under construction. ' : ($_REQUEST['set_msg']);
     if (get_option($option_name2) !== false) {
         update_option($option_name2, $new_value2);
     } else {
@@ -105,7 +105,7 @@ function set_under_construction() {
         add_option($option_name2, $new_value2);
     }
 
-    $new_value3 = (sanitize_text_field($_REQUEST['set_page']) == "") ? 'Website is Under Construction' : sanitize_text_field($_REQUEST['set_page']);
+    $new_value3 = ($_REQUEST['set_page'] == "") ? 'Website is Under Construction' : ($_REQUEST['set_page']);
     if (get_option($option_name3) !== false) {
         update_option($option_name3, $new_value3);
     } else {
@@ -114,7 +114,7 @@ function set_under_construction() {
         add_option($option_name3, $new_value3);
     }
     
-    $new_value4 = (sanitize_text_field($_REQUEST['set_caption']) == "") ? 'We will be back soon!' : sanitize_text_field($_REQUEST['set_caption']);
+    $new_value4 = (($_REQUEST['set_caption']) == "") ? 'We will be back soon!' : ($_REQUEST['set_caption']);
     if (get_option('set_caption') !== false) {
         update_option('set_caption', $new_value4);
     } else {
@@ -123,7 +123,7 @@ function set_under_construction() {
         add_option('set_caption', $new_value4);
     }
 
-    $new_value5 = (sanitize_text_field($_REQUEST['wuc_logo']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_logo']);
+    $new_value5 = (($_REQUEST['wuc_logo']) == "") ? '' : ($_REQUEST['wuc_logo']);
     if (get_option('wuc_logo') !== false) {
         update_option('wuc_logo', $new_value5);
     } else {
@@ -131,7 +131,7 @@ function set_under_construction() {
         
         add_option('wuc_logo', $new_value5);
     }
-    $new_value6 = (sanitize_text_field($_REQUEST['wuc_facebook']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_facebook']);
+    $new_value6 = (($_REQUEST['wuc_facebook']) == "") ? '' : ($_REQUEST['wuc_facebook']);
     if (get_option('wuc_facebook') !== false) {
         update_option('wuc_facebook', $new_value6);
     } else {
@@ -139,7 +139,7 @@ function set_under_construction() {
         
         add_option('wuc_facebook', 'http://smartcatdesign.net');
     }
-    $new_value7 = (sanitize_text_field($_REQUEST['wuc_gplus']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_gplus']);
+    $new_value7 = (($_REQUEST['wuc_gplus']) == "") ? '' : ($_REQUEST['wuc_gplus']);
     if (get_option('wuc_gplus') !== false) {
         update_option('wuc_gplus', $new_value7);
     } else {
@@ -147,7 +147,7 @@ function set_under_construction() {
         
         add_option('wuc_gplus', 'http://smartcatdesign.net');
     }
-    $new_value8 = (sanitize_text_field($_REQUEST['wuc_twitter']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_twitter']);
+    $new_value8 = (($_REQUEST['wuc_twitter']) == "") ? '' : ($_REQUEST['wuc_twitter']);
     if (get_option('wuc_twitter') !== false) {
         update_option('wuc_twitter', $new_value8);
     } else {
@@ -155,7 +155,7 @@ function set_under_construction() {
         
         add_option('wuc_twitter', 'http://smartcatdesign.net');
     }
-    $new_value9 = (sanitize_text_field($_REQUEST['wuc_email']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_email']);
+    $new_value9 = (($_REQUEST['wuc_email']) == "") ? '' : ($_REQUEST['wuc_email']);
     if (get_option('wuc_email') !== false) {
         update_option('wuc_email', $new_value9);
     } else {
@@ -163,7 +163,7 @@ function set_under_construction() {
         
         add_option('wuc_email', 'http://smartcatdesign.net');
     }
-    $new_value10 = (sanitize_text_field($_REQUEST['wuc_background']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_background']);
+    $new_value10 = (($_REQUEST['wuc_background']) == "") ? '' : ($_REQUEST['wuc_background']);
     if (get_option('wuc_background') !== false) {
         update_option('wuc_background', $new_value10);
     } else {
@@ -171,7 +171,7 @@ function set_under_construction() {
         
         add_option('wuc_background', '');
     }
-    $new_value19 = (sanitize_text_field($_REQUEST['wuc_loading']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_loading']);
+    $new_value19 = (($_REQUEST['wuc_loading']) == "") ? '' : ($_REQUEST['wuc_loading']);
     if (get_option('wuc_loading') !== false) {
         update_option('wuc_loading', $new_value19);
     } else {
@@ -179,7 +179,7 @@ function set_under_construction() {
         
         add_option('wuc_loading', 'timer');
     }
-    $new_value20 = (sanitize_text_field($_REQUEST['wuc_progress']) == "") ? '' : sanitize_text_field($_REQUEST['wuc_progress']);
+    $new_value20 = (($_REQUEST['wuc_progress']) == "") ? '' : ($_REQUEST['wuc_progress']);
     if (get_option('wuc_progress') !== false) {
         update_option('wuc_progress', $new_value20);
     } else {

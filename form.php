@@ -227,25 +227,25 @@
                     <tr>
                         <td><?php _e('Logo') ?></td>
                         <td>
-                            <input type="text" name="wuc_logo" value="<?php echo $wuc_logo ?>" placeholder="<?php _e('Enter image path/url or leave blank for no logo'); ?>"/>
+                            <input type="text" name="wuc_logo" value="<?php echo esc_url( $wuc_logo ); ?>" placeholder="<?php _e('Enter image path/url or leave blank for no logo'); ?>"/>
                         </td>
                     </tr>
                     <tr>
                         <td><?php _e('Background Image') ?></td>
                         <td>
-                            <input type="text" name="wuc_background" value="<?php echo $wuc_background ?>" placeholder="<?php _e('Enter image path/url or leave blank for default background'); ?>"/>
+                            <input type="text" name="wuc_background" value="<?php echo esc_url( $wuc_background ); ?>" placeholder="<?php _e('Enter image path/url or leave blank for default background'); ?>"/>
                         </td>
                     </tr>
                     <tr>
                         <td><?php _e('Title') ?></td>
                         <td>
-                            <textarea name="set_msg" id="set_msg" cols="20" rows="3" style="width: 50%"><?php echo $set_msg; ?></textarea>
+                            <textarea name="set_msg" id="set_msg" cols="20" rows="3" style="width: 50%"><?php echo esc_textarea( $set_msg ); ?></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td><?php _e('Caption') ?></td>
                         <td>
-                            <textarea name="set_caption" id="set_caption" cols="20" rows="3" style="width: 50%"><?php echo $set_caption; ?></textarea>
+                            <textarea name="set_caption" id="set_caption" cols="20" rows="3" style="width: 50%"><?php echo esc_textarea( $set_caption ); ?></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -271,25 +271,25 @@
                     <tr>
                         <td><?php _e('Facebook URL') ?></td>
                         <td>
-                            <input type="text" name="wuc_facebook" value="<?php echo $wuc_facebook ?>" placeholder="<?php _e('Enter Facebook URL or leave blank for no icon'); ?>"/>
+                            <input type="text" name="wuc_facebook" value="<?php echo esc_url( $wuc_facebook ); ?>" placeholder="<?php _e('Enter Facebook URL or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
                         <td><?php _e('Google Plus URL') ?></td>
                         <td>
-                            <input type="text" name="wuc_gplus" value="<?php echo $wuc_gplus ?>" placeholder="<?php _e('Enter Google Plus URL or leave blank for no icon'); ?>"/>
+                            <input type="text" name="wuc_gplus" value="<?php echo esc_url( $wuc_gplus ); ?>" placeholder="<?php _e('Enter Google Plus URL or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
                         <td><?php _e('Twitter URL') ?></td>
                         <td>
-                            <input type="text" name="wuc_twitter" value="<?php echo $wuc_twitter ?>" placeholder="<?php _e('Enter Twitter URL or leave blank for no icon'); ?>"/>
+                            <input type="text" name="wuc_twitter" value="<?php echo esc_url( $wuc_twitter ); ?>" placeholder="<?php _e('Enter Twitter URL or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
                         <td><?php _e('Email Address') ?></td>
                         <td>
-                            <input type="text" name="wuc_email" value="<?php echo $wuc_email ?>" placeholder="<?php _e('Enter email address or leave blank for no icon'); ?>"/>
+                            <input type="text" name="wuc_email" value="<?php esc_html( $wuc_email ); ?>" placeholder="<?php _e('Enter email address or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
