@@ -4,7 +4,7 @@ Donate link: http://smartcatdesign.net
 Tags: construction,maintenance,page,admin,under construction,under maintenance,coming soon,administrator,custom message,social,facebook,twitter,google plus,gplus,email,icons,link,instagram,digg,flickr,skype,tumblr,youtube
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 1.9
+Stable tag: 1.91
 License: GPLv2 or later
 
 Set entire website or specific page under construction or maintenance for all viewers except Admin
