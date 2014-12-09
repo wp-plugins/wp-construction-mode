@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/under-construction-maintenance-mode-free-wordpress-plugin/
   Description: Display a customizable Under Construction or Coming Soon page for all users who are not logged in. Perfect for developing on a live server!
-  Version: 1.91
+  Version: 1.92
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
@@ -29,7 +29,7 @@ add_action('admin_init', 'wuc_activation_redirect');
 function wuc_activation_redirect() {
     if (get_option('wuc_activation_redirect', false)) {
         delete_option('wuc_activation_redirect');
-        wp_redirect(admin_url('/admin.php?page=under-construction.php'));
+        wp_redirect(admin_url('admin.php?page=smartkit_construction'));
     }
 }
 
@@ -45,8 +45,30 @@ function admin_action(){
 }
 
 function under_construction_menu() {
-    add_menu_page('Under Construction', 'Under Construction', 'administrator', 'under-construction.php', 'under_construction_action', plugins_url('under_construction.png', __FILE__));
+    
+    global $menu;
+    $found = FALSE;
+    foreach( $menu as $menu_item ) :
+        if( 'smartkit_menu' == $menu_item[2] ) :
+            $found = TRUE;
+        endif;
+    endforeach;    
+    
+    if(!$found)
+        add_menu_page('Smartkit', 'Smartkit', 'manage_options', 'smartkit_menu', 'smartkit_meow', SC_WUC_PATH . 'img/smartcat.png' );
+    
+    add_submenu_page('smartkit_menu', 'Under Construction', 'Construction Mode', 'manage_options', 'smartkit_construction', 'under_construction_action');    
+    
+//    add_menu_page('Under Construction', 'Under Construction', 'administrator', 'under-construction.php', 'under_construction_action', plugins_url('under_construction.png', __FILE__));
 }
+/*
+ * Create smartkit menu
+ */
+if( !function_exists('smartkit_meow') ) :
+    function smartkit_meow(){
+        include_once 'inc/smartkit/sk.php';
+    }
+endif;
 
 function under_construction_action() {
     $option_name1 = 'set_opt';
@@ -55,7 +77,7 @@ function under_construction_action() {
         switch ($_REQUEST['act']) {
             case "save":
                 set_under_construction();
-                echo '<div class="updated below-h2" id="message" style="position:relative; clear:both;"><p>Under Construction: ' . ($_REQUEST['set_opt']) . '</p></div>';
+                echo '<div class="updated below-h2" id="message" style="position:relative; clear:both;"><p>Under Construction: ' . esc_html( $_REQUEST['set_opt'] ) . '</p></div>';
                 break;
             default:
         }

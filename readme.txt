@@ -7,7 +7,7 @@ Tested up to: 4.0
 Stable tag: 1.91
 License: GPLv2 or later
 
-Set entire website or specific page under construction or maintenance for all viewers except Admin
+Hide your site behind an appealing Under Construction template while you build it's being built!
 == Description ==
 
 Set entire website or specific page under construction or maintenance. Admin can still view the site, perfect for developing new websites or pages. <br>
@@ -17,7 +17,6 @@ Set entire website or specific page under construction or maintenance. Admin can
 <em>Recently added features:</em><br>
 - Change Background: this feature will allow you to choose a background color, or set an image as a background<br>
 - Progress Bar & Timer: This will add a progress bar to notify people how long till your site is ready<br>
-- Support Forum: Do you have any question? Requests? Need Help? <a href="http://smartcatdesign.net/support/">Visit the support forum here</a> <br>
 
 == Installation ==
 
@@ -52,3 +51,5 @@ Minor css fixes
 Background
 = 1.8 =
 progress bar bug fix
+= 1.91 = security fix
+= 1.92 = responsive fix, dashboard change
