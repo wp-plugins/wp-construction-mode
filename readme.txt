@@ -7,7 +7,7 @@ Tested up to: 4.0
 Stable tag: 2.0
 License: GPLv2 or later
 
-Hide your entire site, or just a specific page behind an appealing Under Construction template while you build it's being built & collect newsletter signups!
+Hide your entire site, or just a specific page behind an appealing Under Construction template while you build it & get newsletter signups!
 == Description ==
 
 Set entire website or specific page under construction or maintenance. Admin can still view the site, perfect for developing new websites or pages. <br>
@@ -19,6 +19,8 @@ Set entire website or specific page under construction or maintenance. Admin can
 - Change Background: this feature will allow you to choose a background color, or set an image as a background<br>
 - Progress Bar & Timer: This will add a progress bar to notify people how long till your site is ready<br>
 
+<br><br>
+Mail Chimp: To setup mailchimp, I recommend using this plugin: https://wordpress.org/plugins/mailchimp-for-wp/ and add shortcode [mc4wp_form] to the text box
 == Installation ==
 
 1. Upload 'wp-construction-mode' to the '/wp-content/plugins/' directory
