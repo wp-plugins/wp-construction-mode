@@ -1,13 +1,13 @@
 === WP Construction Mode ===
 Contributors: smartcat
 Donate link: http://smartcatdesign.net
-Tags: construction,maintenance,page,admin,under construction,under maintenance,coming soon,administrator,custom message,social,facebook,twitter,google plus,gplus,email,icons,link,instagram,digg,flickr,skype,tumblr,youtube
+Tags: construction,maintenance,page,admin,under construction,under maintenance,coming soon,administrator,custom message,social,facebook,twitter,google plus,gplus,email,icons,link,instagram,digg,flickr,skype,tumblr,youtube, mailchimp,newsletter,shortcode,contact,form
 Requires at least: 3.2
 Tested up to: 4.0
-Stable tag: 1.92
+Stable tag: 1.91
 License: GPLv2 or later
 
-Hide your site behind an appealing Under Construction template while you build it's being built!
+Hide your entire site, or just a specific page behind an appealing Under Construction template while you build it's being built & collect newsletter signups!
 == Description ==
 
 Set entire website or specific page under construction or maintenance. Admin can still view the site, perfect for developing new websites or pages. <br>
@@ -15,6 +15,7 @@ Set entire website or specific page under construction or maintenance. Admin can
 - Pro version now available, <a href="http://smartcatdesign.net/wp-construction-mode-pro-wordpress-plugin/" target="_blank" title="WP Construction Mode Demo">Go Pro</a><br>
 <br>
 <em>Recently added features:</em><br>
+- Shortcode support: Add your mailchimp, campaigh monitor, gravity forms, contact form or any other shortcode and it will be rendered on the loading page
 - Change Background: this feature will allow you to choose a background color, or set an image as a background<br>
 - Progress Bar & Timer: This will add a progress bar to notify people how long till your site is ready<br>
 
@@ -53,3 +54,4 @@ Background
 progress bar bug fix
 = 1.91 = security fix
 = 1.92 = responsive fix, dashboard change
+= 2.0 = email field fix, added shortcode support

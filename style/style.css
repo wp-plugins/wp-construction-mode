@@ -98,6 +98,24 @@
     font-size: 12px;
     margin-left: 5px;
 }
+.wuc-shortcode input[type=submit]{
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #49B2D2;
+    background: #49B2D2;
+    border: none;
+    color: #fff;
+    box-shadow: 0 0 3px #666;
+    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+}
+.wuc-shortcode input[type=submit]:hover{
+    color: #49B2D2;
+    background: #fff;
+    background-color: #fff;
+}
 /*-------Responsive---------*/
 @media(min-width: 980px){
     #wuc-wrapper .wuc-logo{

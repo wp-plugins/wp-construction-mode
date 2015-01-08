@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/under-construction-maintenance-mode-free-wordpress-plugin/
   Description: Display a customizable Under Construction or Coming Soon page for all users who are not logged in. Perfect for developing on a live server!
-  Version: 1.92
+  Version: 2.0
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
@@ -97,6 +97,7 @@ function under_construction_action() {
     $wuc_background = get_option('wuc_background');
     $wuc_loading = get_option('wuc_loading');
     $wuc_progress = get_option('wuc_progress');     
+    $wuc_shortcode = get_option('wuc_shortcode');     
     require_once('form.php');
 }
 
@@ -209,6 +210,14 @@ function set_under_construction() {
         
         add_option('wuc_progress', '10');
     }
+    $new_value21 = (($_REQUEST['wuc_shortcode']) == "") ? '' : ($_REQUEST['wuc_shortcode']);
+    if (get_option('wuc_shortcode') !== false) {
+        update_option('wuc_shortcode', $new_value21);
+    } else {
+        
+        
+        add_option('wuc_shortcode', '');
+    }
 }
 
 function show_uc() {
@@ -228,6 +237,7 @@ function show_uc() {
     $wuc_background = get_option('wuc_background');
     $wuc_loading = get_option('wuc_loading');
     $wuc_progress = get_option('wuc_progress');     
+    $wuc_shortcode = get_option('wuc_shortcode');     
     $current_user = wp_get_current_user();
 
 	

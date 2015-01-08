@@ -28,6 +28,12 @@
                 </div>
             <?php }?>
             
+            <?php if($wuc_shortcode != '') : ?>
+            <div class="wuc-shortcode">
+                <?php echo do_shortcode($wuc_shortcode); ?>
+            </div>
+            <?php endif; ?>
+            
             <div class="wuc_icons">
                 <?php if ($wuc_facebook != '') { ?>
                     <a href="<?php echo $wuc_facebook; ?>" target="_blank">

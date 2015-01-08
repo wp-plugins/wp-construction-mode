@@ -1,5 +1,12 @@
 <script>
     jQuery(function() {
+        
+        jQuery(".wuc_shortcode").focusout(function () {
+            var shortcode = jQuery(this).val();
+            shortcode = shortcode.replace(/"/g, "").replace(/'/g, "");
+            jQuery(this).val(shortcode);
+        });
+        
         jQuery('#wuc_loading').change(function() {
             if (jQuery(this).val() == 'progress') {
                 jQuery('.choose-progress').show();
@@ -261,6 +268,34 @@
                     </tr>                    
                 </tbody>
             </table>
+            
+            <table class="widefat">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <img 
+                                src="<?php echo plugin_dir_url( __FILE__) . '/img/mailchimp.png'; ?>"
+                                style="width: 30px;">Newsletter / Contact Form Shortcode
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?php _e('Shortcode'); ?></td>
+                        <td>
+                            <input class="wuc_shortcode" type="text" name="wuc_shortcode" value="<?php echo esc_attr( $wuc_shortcode) ;?>" placeholder="Enter any Shortcode here"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            You can enter any shortcode here, such as mailchimp, contact form 7, gravity forms, icon shortcodes, html shortcodes or anything you want!
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+            
+            
             <table class="widefat">
                 <thead>
                     <tr>
@@ -289,7 +324,7 @@
                     <tr>
                         <td><?php _e('Email Address') ?></td>
                         <td>
-                            <input type="text" name="wuc_email" value="<?php esc_html( $wuc_email ); ?>" placeholder="<?php _e('Enter email address or leave blank for no icon'); ?>"/>
+                            <input type="text" name="wuc_email" value="<?php echo esc_html( $wuc_email ); ?>" placeholder="<?php _e('Enter email address or leave blank for no icon'); ?>"/>
                         </td>
                     </tr>
                     <tr>
