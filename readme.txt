@@ -4,7 +4,7 @@ Donate link: http://smartcatdesign.net/donate
 Tags: construction,maintenance,landing,page,admin,under construction,under maintenance,coming soon,administrator,custom message,social,facebook,twitter,google plus,gplus,email,icons,link,instagram,digg,flickr,skype,tumblr,youtube, mailchimp,newsletter,shortcode,contact,form,constant contact
 Requires at least: 3.2
 Tested up to: 4.1
-Stable tag: 2.1
+Stable tag: 3.0
 License: GPLv2 or later
 
 Display a customizable Under Construction or Coming Soon landing page for all users except the admin. Perfect for developing on a live server!
