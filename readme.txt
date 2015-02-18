@@ -26,6 +26,7 @@ enter an About section, Contact section and many more features! See the demo!
 Pro version available, [Live Demo](http://smartcatdesign.net/smartcat-construction-mode-v2-pro/ "Construction Mode Pro")
 
 Available Customizations:
+
 * Toggle on/off
 * Set to entire site or specific page
 * Animated Progress Bar
@@ -50,7 +51,12 @@ Available Customizations:
 1. Construction Mode Landing Page
 2. Settings Page
 3. Pro Version, 1 of many samples
+
 == Changelog ==
+
+= 3.01 =
+* Added a direct login link from the Construction Page so admins can easily access the login page & site backend
+* Added more filtering to avoid conflicts in template_redirect
 
 = 3.0 = 
 * ATTENTION: The plugin has undergone a complete re-build. It now has better functionality and is more scalable for future updates
@@ -63,10 +69,6 @@ Available Customizations:
 * Added more options for social icons
 * New Feature: Added animation to progress bar
 * Moved the Under Construction notification to the admin top bar
-
-== Upgrade Notice ==
-= 3.0 =
-This version is a re-build of the plugin that gives you many new features!
 
 = 2.0 = email field fix, added shortcode support
 = 1.92 = responsive fix, dashboard change
@@ -84,6 +86,11 @@ bug fixes, pro version released
 added social icons
 = 1.0 =
 initial release
+
+== Upgrade Notice ==
+= 3.0 =
+This version is a re-build of the plugin that gives you many new features!
+
 
 
 

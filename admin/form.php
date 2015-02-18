@@ -54,14 +54,14 @@
             <tbody>
                 <tr>
                     <td>
-                        <?php _e("Do you like this plugin ? Please take a minute and write a review on WordPress.org", "sc-construction"); ?>
+                        <b><?php _e("Do you like this plugin ? Do you have suggestions? Want to request more features? Please take a minute and write a review on WordPress.org and share your opinion", "sc-construction"); ?></b>
                     </td>
                 </tr>
                 <tr>
                     <td class='center'>
                         <a href='https://wordpress.org/support/view/plugin-reviews/wp-construction-mode' target='_blank' class='button-primary'><?php _e('Leave Review', 'sc-construction'); ?></a>
                     </td>
-                </tr>                
+                </tr>
                 </tbody>
         </table>
 

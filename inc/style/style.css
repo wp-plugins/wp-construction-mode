@@ -9,6 +9,21 @@
 .center{
     text-align: center;
 }
+#admin-login{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 100%;
+    text-align: center;
+    background: #fff;
+    color: #fff;
+    display: inline-block;
+    z-index: 999;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
 #about,
 #contact{
     display: none;

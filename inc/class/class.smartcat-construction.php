@@ -6,7 +6,7 @@
  */
 class SmartcatConstructionPlugin {
 
-    const VERSION = '2.0';
+    const VERSION = '3.01';
 
     private static $instance;
     private $options;
@@ -49,10 +49,10 @@ class SmartcatConstructionPlugin {
 
         if ( !get_option( 'smartcat_construction_options' ) ) {
             add_option( 'smartcat_construction_options', $options );
+            $options[ 'redirect' ] = true;
+            update_option( 'smartcat_construction_options', $options );            
         }
 
-        $options[ 'redirect' ] = true;
-        update_option( 'smartcat_construction_options', $options );
     }
 
     public static function deactivate() {
@@ -60,6 +60,8 @@ class SmartcatConstructionPlugin {
     }
 
     private function add_hooks() {
+        
+        add_action( 'init', array( $this,  'escape_catch_redirect') );
         add_action( 'admin_init', array( $this, 'smartcat_construction_activation_redirect' ) );
         add_action( 'wp_head', array( $this, 'sc_custom_styles' ) );
 //        add_action( 'wp_head', array( $this, 'smartcat_load_screen' ) );
@@ -67,9 +69,19 @@ class SmartcatConstructionPlugin {
 //        add_action( 'wp_enqueue_scripts', array( $this, 'smartcat_construction_load_styles_scripts' ) );
         add_action( 'admin_menu', array( $this, 'under_construction_menu' ) );
         add_action( 'admin_bar_menu', array( $this, 'create_admin_bar_menu' ), 1000 );
-        add_action( 'template_redirect', array( $this, 'catch_redirect') );
+        
     }
 
+    public function escape_catch_redirect(){
+        global $pagenow;
+        
+        if( 'wp-login.php' == $pagenow ) :
+            return;
+        else :
+            add_action( 'template_redirect', array( $this, 'catch_redirect') );
+        endif;
+    }
+    
     private function get_options() {
         if ( get_option( 'smartcat_construction_options' ) ) :
             $this->options = get_option( 'smartcat_construction_options' );
@@ -162,7 +174,9 @@ class SmartcatConstructionPlugin {
         
         $current_user = wp_get_current_user();     
         
-        if( ( $this->options['mode'] && !user_can( $current_user, 'administrator' ) )  ) :
+
+        
+        if( ( $this->options['mode'] && !user_can( $current_user, 'administrator' ) && !isset($_GET['sc_construction_login'] ) )  ) :
             if( $this->options['set_page'] == 'all' || $this->options['set_page'] == get_the_ID() ) :
                 include_once SC_CONSTRUCTION_PATH . 'inc/template/construction.php';
                 exit();

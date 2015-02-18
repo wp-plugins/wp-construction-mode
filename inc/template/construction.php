@@ -63,7 +63,7 @@
                 background: <?php echo $accent_color; ?>; 
                 color: <?php echo $font_color; ?>;
             }
-            .trigger, .wuc_icons a{ background: <?php echo $accent_color; ?>;}
+            .trigger, .wuc_icons a, #admin-login{ background: <?php echo $accent_color; ?>;}
             .wuc-shortcode input[type=text]:focus, .wuc-shortcode input[type=email]:focus{
                 box-shadow: 0 0 6px <?php echo $accent_color; ?>;
                 -moz-box-shadow: 0 0 6px <?php echo $accent_color; ?>;
@@ -74,11 +74,14 @@
         </style>
     </head>
     <body>
+        <a href="<?php echo wp_login_url(); ?>" id="admin-login" class="trigger">
+            <i class="fa fa-lock"></i>
+        </a>
 
-
+        
     <div class='wuc-overlay'></div>
     <div id="wuc-wrapper"></div>
-
+    
     <div class="wuc-box">
         <div class="wuc-logo center sc-col-sm-12">
             <?php if ( $logo != "" ) { ?>
