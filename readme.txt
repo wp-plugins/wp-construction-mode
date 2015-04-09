@@ -20,6 +20,8 @@ to see the Coming Soon page.
 From this settings page you can upload your own logo, upload a different background, Enter the text you want visitors to see, set the colors of your preference, and enter an optional
 shortcode for a form. The shortcode could be for a contact form or a newsletter. You can put any shortcode that you got from another plugin, and the form will show up on the landing page.
 
+https://www.youtube.com/watch?v=iXvpQqv3yG8
+
 The Pro vesion provides you with a sleek circular countdown timer. Set the target date & time, excite your visitors with a count down till launch! It also allows you to 
 enter an About section, Contact section and many more features! See the demo!
 
@@ -90,6 +92,13 @@ initial release
 == Upgrade Notice ==
 = 3.0 =
 This version is a re-build of the plugin that gives you many new features!
+
+= 3.1 = 
+fix for slashes in title and subtitle
+added 2 new templates for the pro version
+added new animations for the pro version
+JS fixes for upload button & lightbox
+
 
 
 
