@@ -6,7 +6,7 @@
  */
 class SmartcatConstructionPlugin {
 
-    const VERSION = '3.01';
+    const VERSION = '3.10';
 
     private static $instance;
     private $options;
@@ -64,9 +64,7 @@ class SmartcatConstructionPlugin {
         add_action( 'init', array( $this,  'escape_catch_redirect') );
         add_action( 'admin_init', array( $this, 'smartcat_construction_activation_redirect' ) );
         add_action( 'wp_head', array( $this, 'sc_custom_styles' ) );
-//        add_action( 'wp_head', array( $this, 'smartcat_load_screen' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'smartcat_construction_load_admin_styles_scripts' ) );
-//        add_action( 'wp_enqueue_scripts', array( $this, 'smartcat_construction_load_styles_scripts' ) );
         add_action( 'admin_menu', array( $this, 'under_construction_menu' ) );
         add_action( 'admin_bar_menu', array( $this, 'create_admin_bar_menu' ), 1000 );
         
@@ -99,7 +97,7 @@ class SmartcatConstructionPlugin {
     }
 
     public function under_construction_menu() {
-        add_menu_page( 'Construction Mode', 'Construction Mode', 'manage_options', 'under_construction', array( $this, 'show_under_construction_menu' ) );
+        add_menu_page( 'Construction Mode', 'Construction Mode', 'manage_options', 'under_construction', array($this, 'show_under_construction_menu'), 'dashicons-hammer');
     }
 
     public function show_under_construction_menu() {
@@ -142,11 +140,11 @@ class SmartcatConstructionPlugin {
         wp_enqueue_script( 'jquery-ui-tooltip' );
         wp_enqueue_style( 'thickbox' );
         wp_enqueue_script( 'media-upload' );
-        wp_enqueue_script( 'thickbox' );
 
-        wp_enqueue_style( 'smartcat_construction_admin_style', SC_CONSTRUCTION_URL . 'inc/style/style_admin.css' );
-
-        wp_enqueue_script( 'smartcat_construction_script', SC_CONSTRUCTION_URL . 'inc/script/script_admin.js', array( 'jquery', 'wp-color-picker', 'media-upload', 'thickbox', 'jquery-ui-tooltip' ) );
+        if ($hook == 'toplevel_page_under_construction') :
+            wp_enqueue_style( 'smartcat_construction_admin_style', SC_CONSTRUCTION_URL . 'inc/style/style_admin.css' );
+            wp_enqueue_script( 'smartcat_construction_script', SC_CONSTRUCTION_URL . 'inc/script/script_admin.js', array( 'jquery', 'wp-color-picker', 'media-upload', 'thickbox', 'jquery-ui-tooltip' ) );
+        endif;
     }
 
     function smartcat_construction_load_styles_scripts() {
@@ -174,9 +172,14 @@ class SmartcatConstructionPlugin {
         
         $current_user = wp_get_current_user();     
         
+        if ( isset( $_GET['smartcat_construction'] ) && $_GET['smartcat_construction'] == 'preview') :
 
+            include_once SC_CONSTRUCTION_PATH . 'inc/template/construction.php';
+            exit();
+        endif;
         
-        if( ( $this->options['mode'] && !user_can( $current_user, 'administrator' ) && !isset($_GET['sc_construction_login'] ) )  ) :
+        
+        if (( $this->options['mode'] && !user_can($current_user, 'administrator') && !user_can($current_user, 'editor'))) :
             if( $this->options['set_page'] == 'all' || $this->options['set_page'] == get_the_ID() ) :
                 include_once SC_CONSTRUCTION_PATH . 'inc/template/construction.php';
                 exit();

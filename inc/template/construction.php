@@ -90,10 +90,10 @@
         </div>        
 
         <h2 class="title sc-col-sm-12">
-            <?php echo $title; ?>
+            <?php echo stripslashes( $title ); ?>
         </h2>
         <h3 class="subtitle sc-col-sm-12">
-            <?php echo $sub_title; ?>
+            <?php echo stripslashes( $sub_title ); ?>
         </h3>
         <?php if ( $template == 'progress' ) { ?>
             <div class="wuc-progress sc-col-sm-12">

@@ -48,40 +48,49 @@
         <table class="widefat">
             <thead>
                 <tr>
-                    <th><?php _e("Support this plugin", "sc-construction") ?></th>
+                    <th><?php _e("Default Template", "sc-construction") ?></th>
                 </tr>                
             </thead>                
             <tbody>
                 <tr>
-                    <td>
-                        <b><?php _e("Do you like this plugin ? Do you have suggestions? Want to request more features? Please take a minute and write a review on WordPress.org and share your opinion", "sc-construction"); ?></b>
-                    </td>
-                </tr>
-                <tr>
                     <td class='center'>
-                        <a href='https://wordpress.org/support/view/plugin-reviews/wp-construction-mode' target='_blank' class='button-primary'><?php _e('Leave Review', 'sc-construction'); ?></a>
+                        
+                        <img src="<?php echo SC_CONSTRUCTION_URL . '/inc/img/Capture5.JPG' ?>" style="width: 100%;"/>
+                        
                     </td>
-                </tr>
+                </tr>          
                 </tbody>
         </table>
 
         <table class="widefat">
             <thead>
                 <tr>
-                    <th><?php _e("Free WordPress Theme", "sc-construction") ?></th>
+                    <th><?php _e("One Page", "sc-construction") ?></th>
                 </tr>                
             </thead>                
             <tbody>
                 <tr>
-                    <td>
-                        <?php _e("Building a new site? Try one of our free themes", "sc-construction"); ?>
+                    <td class='center'>
+                        
+                        <img src="<?php echo SC_CONSTRUCTION_URL . '/inc/img/Capture4.JPG' ?>" style="width: 100%;"/>
+                        
                     </td>
-                </tr>
+                </tr>          
+                </tbody>
+        </table>
+
+        <table class="widefat">
+            <thead>
+                <tr>
+                    <th><?php _e("Moving Background", "sc-construction") ?></th>
+                </tr>                
+            </thead>                
+            <tbody>
                 <tr>
                     <td class='center'>
                         
-                        <img src="<?php echo SC_CONSTRUCTION_URL . '/inc/img/byblos.jpg' ?>" style="width: 100%;"/>
-                        <a href='https://wordpress.org/themes/byblos' target='_blank' class='button-primary'><?php _e('Download Theme', 'sc-construction'); ?></a>
+                        <img src="<?php echo SC_CONSTRUCTION_URL . '/inc/img/Capture3.JPG' ?>" style="width: 100%;"/>
+                        
                     </td>
                 </tr>          
                 </tbody>
@@ -91,6 +100,7 @@
     </div>
     
     <div class="width70 left">
+        
         <form name="post_form" method="post" action="" enctype="multipart/form-data">
             
             <table class="widefat sc-construction-menu">
@@ -106,6 +116,10 @@
                 </thead>
                 
             </table>
+            
+        <p>
+            WP Construction Mode allows the site Admin & Editor profiles to continue seeing the normal website, while everyone else sees the Construction Mode page.
+        </p>            
             
             <table class="widefat" id="general">
                 <thead>
@@ -177,6 +191,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td><?php _e('Select Template') ?></td>
+                        <td>
+                            <select name ="smartcat_construction_options[display_template]" id="smartcat_construction_select_template">
+                                <option value="template1">Default</option>
+                                <option disabled="disabled">One Page - Pro Version</option>
+                                <option disabled="disabled">Moving Background - Pro Version</option>
+                            </select>
+                        </td>
+                    </tr>
                     <tr>
                         <td><?php _e('Logo') ?></td>
                         <td>
@@ -392,8 +416,10 @@
                     </tr>
                 </thead>
             </table>
-            
-            <input type="submit" name="smartcat_construction_save" value="Update" class="button button-primary" />
+            <div style="text-align: right">
+                <a target="_blank" href="<?php echo home_url('/'); ?>?smartcat_construction=preview" class="button button-default" style="padding: 17px 22px; line-height: 0">Preview</a>    
+                <input type="submit" name="smartcat_construction_save" value="Update" class="button button-primary" style="padding: 17px 22px; line-height: 0"/>
+            </div>
             <!--<input type="hidden" name="act" value="save" />-->
         </form>
 
