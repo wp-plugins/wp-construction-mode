@@ -42,6 +42,7 @@
                         <?php
                         _e("Do you need support? Please visit our new support form and post your support request!", "sc-construction");
                         ?>
+                        <p><br><em><strong>Troubleshooting Tip:</strong> If you are using a cache plugin, you may need to delete the cache when you switch Construction Mode On/Off</em></p>
                     </td>
                 </tr>
 
@@ -118,7 +119,7 @@
             </table>
             
         <p>
-            WP Construction Mode allows the site Admin & Editor profiles to continue seeing the normal website, while everyone else sees the Construction Mode page.
+            WP Construction Mode allows the site Admin & Editor profiles to continue seeing the normal website, while everyone else sees the Construction Mode page.<br>
         </p>            
             
             <table class="widefat" id="general">

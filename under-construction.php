@@ -3,7 +3,7 @@
   Plugin Name: WP Construction Mode
   Plugin URI: http://smartcatdesign.net/downloads/construction-mode-v2-pro/
   Description: Display a customizable Under Construction or Coming Soon landing page for all users except the admin. Perfect for developing a new site!
-  Version: 3.10
+  Version: 3.11
   Author: SmartCat
   Author URI: http://smartcatdesign.net
   License: GPL v2
